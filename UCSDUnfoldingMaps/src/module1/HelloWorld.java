@@ -6,6 +6,7 @@ import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.providers.AbstractMapProvider;
 import de.fhpotsdam.unfolding.providers.Google;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
+import de.fhpotsdam.unfolding.providers.Microsoft;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 /** HelloWorld
@@ -43,10 +44,11 @@ public class HelloWorld extends PApplet
 
 		// This sets the background color for the Applet.  
 		// Play around with these numbers and see what happens!
-		this.background(200, 200, 200);
+		this.background(161, 212, 144);
 		
 		// Select a map provider
 		AbstractMapProvider provider = new Google.GoogleTerrainProvider();
+		AbstractMapProvider provider2 = new Google.GoogleTerrainProvider();
 		// Set a zoom level
 		int zoomLevel = 10;
 		
@@ -68,15 +70,15 @@ public class HelloWorld extends PApplet
 		map1 = new UnfoldingMap(this, 50, 50, 325, 500, provider);
 
 		// The next line zooms in and centers the map at 
-	    // 32.9 (latitude) and -117.2 (longitude)
-	    map1.zoomAndPanTo(zoomLevel, new Location(32.9f, -117.2f));
+	    // Novi Sad 45.3 (latitude) and 19.8 (longitude)
+	    map1.zoomAndPanTo(zoomLevel, new Location(45.3f, 19.8f));
 		
 		// This line makes the map interactive
 		MapUtils.createDefaultEventDispatcher(this, map1);
 		
 		// TODO: Add code here that creates map2 
 		// Then you'll modify draw() below
-		map2 = new UnfoldingMap(this, 425, 50, 325, 500, provider);
+		map2 = new UnfoldingMap(this, 425, 50, 325, 500, provider2);
 
 		// The next line zooms in and centers the map at 
 	    // Smederevo 44.7 (latitude) and 20.9 (longitude)
